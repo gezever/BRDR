@@ -1,0 +1,328 @@
+{
+    "@context": {
+        "identifier": {
+            "@id": "adms:identifier",
+            "@type": "@id"
+        },
+        "id": {
+            "@id": "@id",
+            "@type": "@id"
+        },
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
+        "qualifiedAssociation": {
+            "@id": "prov:qualifiedAssociation",
+            "@type": "@id"
+        },
+        "agent": {
+            "@id": "prov:agent",
+            "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+            "@id": "prov:actedOnBehalfOf",
+            "@type": "@id"
+        },
+        "hadPlan": {
+            "@id": "prov:hadPlan",
+            "@type": "@id"
+        },
+        "hadRole": {
+            "@id": "prov:hadRole",
+            "@type": "@id"
+        },
+        "hadMember": {
+            "@id": "prov:hadMember",
+            "@type": "@id"
+        },
+        "area": {
+            "@id": "geosparql:hasMetricArea",
+            "@type": "xsd:decimal"
+        },
+        "wasStartedBy": {
+            "@id": "prov:wasStartedBy",
+            "@type": "@id"
+        },
+        "wasAttributedTo": {
+            "@id": "prov:wasAttributedTo",
+            "@type": "@id"
+        },
+        "resultTime": {
+            "@id": "sosa:resultTime",
+            "@type": "xsd:dateTime"
+        },
+        "inXSDDateTime": {
+            "@id": "time:inXSDDateTime",
+            "@type": "xsd:dateTime"
+        },
+        "actuations": {
+            "@id": "grondboringbeno:actuations",
+            "@type": "@id"
+        },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
+        "first": {
+            "@id": "rdf:first",
+            "@type": "@id"
+        },
+        "notation": {
+            "@id": "skos:notation",
+            "@type": "geosparql:capakey"
+        },
+        "hasFeatureOfInterest": {
+            "@id": "sosa:hasFeatureOfInterest",
+            "@type": "@id"
+        },
+        "hasGeometry": {
+            "@id": "geosparql:hasGeometry",
+            "@type": "@id"
+        },
+        "asWKT": {
+            "@id": "geosparql:asWKT",
+            "@type": "geosparql:wktLiteral"
+        },
+        "hasProperty": {
+            "@id": "ssn:hasProperty",
+            "@type": "@id"
+        },
+        "hasResult": {
+            "@id": "sosa:hasResult",
+            "@type": "@id"
+        },
+        "postconditie": {
+            "@id": "grondboringbeno:postconditie",
+            "@type": "@id"
+        },
+        "unitMeasure": {
+            "@id": "sdmx-attribute:unitMeasure",
+            "@type": "@id"
+        },
+        "value": {
+            "@id": "rdf:value",
+            "@type": "xsd:decimal"
+        },
+        "boolean_value": {
+            "@id": "rdf:value",
+            "@type": "xsd:boolean"
+        },
+        "integer_value": {
+            "@id": "rdf:value",
+            "@type": "xsd:integer"
+        },
+        "preconditie": {
+            "@id": "grondboringbeno:preconditie",
+            "@type": "@id"
+        },
+        "about": {
+            "@id": "schema:about",
+            "@type": "@id"
+        },
+        "madeByActuator": {
+            "@id": "sosa:madeByActuator",
+            "@type": "@id"
+        },
+        "implements": {
+            "@id": "ssn:implements",
+            "@type": "@id"
+        },
+        "seeAlso": {
+            "@id": "rdfs:seeAlso",
+            "@type": "@id"
+        },
+        "exactMatch": {
+            "@id": "skos:exactMatch",
+            "@type": "@id"
+        },
+        "phenomenonTime": {
+            "@id": "sosa:phenomenonTime",
+            "@type": "@id"
+        },
+        "usedProcedure": {
+            "@id": "sosa:usedProcedure",
+            "@type": "@id"
+        },
+        "used": {
+            "@id": "prov:used",
+            "@type": "@id"
+        },
+        "opdrachtgever": {
+            "@id": "grondboringbeno:opdrachtgever",
+            "@type": "@id"
+        },
+        "samplings": {
+            "@id": "grondboringbeno:samplings",
+            "@type": "@id"
+        },
+        "isSampleOf": {
+            "@id": "sosa:isSampleOf",
+            "@type": "@id"
+        },
+        "hasSample": {
+            "@id": "sosa:hasSample",
+            "@type": "@id"
+        },
+        "actsOnProperty": {
+            "@id": "sosa:actsOnProperty",
+            "@type": "@id"
+        },
+        "sampleDiepteTot": {
+            "@id": "grondboringbeno:sampleDiepteTot",
+            "@type": "@id"
+        },
+        "sampleDiepteVan": {
+            "@id": "grondboringbeno:sampleDiepteVan",
+            "@type": "@id"
+        },
+        "rest": {
+            "@id": "rdf:rest",
+            "@type": "@id"
+        },
+        "boorder": {
+            "@id": "grondboringen:boorder",
+            "@type": "@id"
+        },
+        "boormeester": {
+            "@id": "grondboringen:boormeester",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@language": "nl"
+        },
+        "subPropertyOf": {
+            "@id": "rdfs:subPropertyOf",
+            "@type": "@id"
+        },
+        "range": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        },
+        "madeBySensor": {
+            "@id": "sosa:madeBySensor",
+            "@type": "@id"
+        },
+        "observedProperty": {
+            "@id": "sosa:observedProperty",
+            "@type": "@id"
+        },
+        "subject": {
+            "@id": "dcterms:subject",
+            "@type": "@id"
+        },
+        "isPropertyOf": {
+            "@id": "ssn:isPropertyOf",
+            "@type": "@id"
+        },
+        "wasOriginatedBy": {
+            "@id": "ssn:wasOriginatedBy",
+            "@type": "@id"
+        },
+        "date": {
+            "@id": "dcterms:date",
+            "@type": "xsd:date"
+        },
+        "version_date": {
+            "@type": "xsd:date",
+            "@id": "metadata:version_date"
+        },
+        "gekoppelde_eigenschap": {
+            "@id": "property:gekoppelde_eigenschap",
+            "@type": "@id"
+        },
+        "full": {
+            "@type": "xsd:boolean",
+            "@id": "sosa:hasSimpleResult"
+        },
+        "percentage": {
+            "@type": "xsd:decimal",
+            "@id": "sosa:hasSimpleResult"
+        },
+        "adms": "http://www.w3.org/ns/adms#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "geometrie": "https://data.bodemenondergrond.vlaanderen.be/id/geometrie/",
+        "geosparql": "http://www.opengis.net/ont/geosparql#",
+        "gml": "http://www.opengis.net/ont/gml#",
+        "property": "https://id.erfgoed.net/property/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qudt-schema": "https://qudt.org/schema/qudt/",
+        "qudt-unit": "https://qudt.org/vocab/unit/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "sosa-om": "http://www.w3.org/ns/sosa/om#",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "time": "http://www.w3.org/2006/time#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "metadata": "https://id.erfgoed.net/metadata/"
+    },
+    "@graph": [
+        {
+            "id": "metadata:observation1aa",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "full": "true",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_boolean"
+        },
+        {
+            "id": "metadata:observation1ab",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "percentage": "100.0",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_percentage"
+        },
+        {
+            "id": "metadata:observation1ac",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "full": "true",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_boolean"
+        },
+        {
+            "id": "metadata:observation1ad",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "percentage": "100.0",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_percentage"
+        },
+        {
+            "id": "metadata:observation1ae",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "full": "false",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_boolean"
+        },
+        {
+            "id": "metadata:observation1af",
+            "type": "sosa:Observation",
+            "used": "https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000",
+            "hasFeatureOfInterest": "metadata:alignment1a",
+            "percentage": "27.14",
+            "madeBySensor": "metadata:sensor",
+            "observedProperty": "property:coverage_percentage"
+        }
+    ]
+}

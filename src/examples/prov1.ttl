@@ -1,119 +1,157 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sdo: <https://schema.org/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://www.opengis.net/ont/geosparql#> .
-@prefix erfgoed: <https://id.erfgoed.net/metadata/> .
-@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo:      <https://schema.org/> .
+@prefix schema:   <https://schema.org/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix :         <http://www.opengis.net/ont/geosparql#> .
+@prefix erfgoed:  <https://id.erfgoed.net/metadata/> .
+@prefix property: <https://id.erfgoed.net/property/> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix sosa:     <http://www.w3.org/ns/sosa/> .
+@prefix ssn:      <http://www.w3.org/ns/ssn/> .
+@prefix parcel:   <https://geo.api.vlaanderen.be/capakey/v2/parcel/> .
+@prefix qb:       <http://purl.org/linked-data/cube#> .
 
 
-erfgoed:feature1 a :Feature;
-              :hasGeometry erfgoed:geometry1
+erfgoed:feature1
+    a            :Feature ;
+    :hasGeometry erfgoed:geometry1
 .
 
-erfgoed:geometry1 a :Geometry ;
-        :asWKT "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
-.
-
-erfgoed:geometry1 a :Geometry ;
-                  :asWKT "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
-.
-
-erfgoed:24504D0693_00B000 a :Geometry ;
-              :hasMetricArea 130.45 ;
-              prov:generatedAtTime "2024-04-15T00:00:00"^^xsd:dateTime ;
-              skos:notation "24504D0693/00B000"^^:capakey ;
-
-
-
-
-
-        "24504D0693/00B000": {
-      "full": true,
-      "area": 130.45,
-      "percentage": 100,
-      "version_date": "2024-04-15"
-    },
-    "24504D0692/00B000": {
-      "full": true,
-      "area": 147.8,
-      "percentage": 100,
-      "version_date": "2024-04-15"
-    },
-    "24504D0734/00M000": {
-      "full": false,
-      "area": 233.46,
-      "percentage": 27.14,
-      "version_date": "2018-12-01"
-    }
-
-
-erfgoed:alignment1 a prov:Activity ;
-        prov:used erfgoed:geometry1 ;
-        prov:generated erfgoed:predictie1
-.
-
-erfgoed:predictie1 a prov:Collection ;
-prov:hadMember erfgoed:predictie1a, erfgoed:predictie1b, erfgoed:predictie1c .
-
-erfgoed:predictie1a a prov:Entity .
-erfgoed:predictie1b a prov:Entity .
-erfgoed:predictie1c a prov:Entity .
-
+erfgoed:geometry1
+    a :Geometry ;
+    :asWKT
+      "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
 .
 
 
+<https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000>
+    a                    :Geometry ;
+    :hasMetricArea       130.44 ;
+    erfgoed:version_date "2024-04-15"^^xsd:date ;
+    skos:notation        "24504D0692/00B000"^^:capakey ;
+#                          erfgoed:full true;
+#                          erfgoed:percentage 100;
+.
+
+<https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000>
+    a                    :Geometry ;
+    :hasMetricArea       147.8 ;
+    erfgoed:version_date "2024-04-15"^^xsd:date ;
+    skos:notation        "24504D0693/00B000"^^:capakey ;
+#                          erfgoed:full true;
+#                          erfgoed:percentage 100;
+.
+
+<https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000>
+    a                    :Geometry ;
+    :hasMetricArea       233.46 ;
+    erfgoed:version_date "2024-04-15"^^xsd:date ;
+    skos:notation        "24504D0734/00M000"^^:capakey ;
+#                          erfgoed:full false;
+#                          erfgoed:percentage 27.14;
+.
+
+erfgoed:aligning1
+    a                         sosa:Actuation ;
+    sosa:hasFeatureOfInterest erfgoed:geometry1 ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000>,
+                              <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000>,
+                              <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000> ;
+    prov:generated            erfgoed:alignment1 ;
+    sosa:hasResult            erfgoed:alignment1 ;
+    prov:wasAssociatedWith    erfgoed:aligner1 ;
+.
+
+erfgoed:alignment1
+    a              prov:Collection ;
+    prov:hadMember erfgoed:alignment1a, erfgoed:alignment1b, erfgoed:alignment1c .
+
+erfgoed:alignment1a
+    a prov:Entity, :Geometry ;
+    :asWKT
+      "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
+.
+
+erfgoed:alignment1b
+    a prov:Entity, :Geometry ;
+    :asWKT
+      "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
+.
+
+erfgoed:alignment1c
+    a prov:Entity, :Geometry ;
+    :asWKT
+      "POLYGON ((173091.231988003 174049.97385057225, 173095.97323898383 174064.57996246478, 173108.8591519013 174061.0441936764, 173109.00910644286 174060.99718317966, 173109.0370832201 174061.13273092007, 173118.13954723 174058.38636291, 173119.7700112299 174057.89445892008, 173122.61071523 174057.03737091008, 173124.81762724 174056.37151491008, 173123.69033123992 174053.0863949101, 173123.49455523 174052.5158349101, 173122.43772384527 174049.43602870268, 173122.2656912399 174048.9347789101, 173121.75554723 174047.44825091, 173118.59772323 174038.2458189, 173118.44631616247 174038.31591967345, 173118.36681860202 174038.10053674813, 173114.83099023972 174028.3573652607, 173087.88012073652 174039.43629412368, 173091.10165324152 174049.57233541954, 173091.21366357367 174049.91739950766, 173091.231988003 174049.97385057225))"^^:wktLiteral
+.
+
+erfgoed:aligner
+    a prov:SoftwareAgent .
+
+erfgoed:sensor
+    a sosa:Sensor .
+
+erfgoed:observation1aa
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_boolean ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000> ;
+    sosa:hasSimpleResult      true ;
+    sosa:madeBySensor         erfgoed:sensor .
+
+erfgoed:observation1ab
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_percentage ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000> ;
+    sosa:hasSimpleResult      100.0 ;
+    sosa:madeBySensor         erfgoed:sensor .
+
+erfgoed:observation1ac
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_boolean ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000> ;
+    sosa:hasSimpleResult      true ;
+    sosa:madeBySensor         erfgoed:sensor .
+
+erfgoed:observation1ad
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_percentage ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000> ;
+    sosa:hasSimpleResult      100.0 ;
+    sosa:madeBySensor         erfgoed:sensor .
+
+erfgoed:observation1ae
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_boolean ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000> ;
+    sosa:hasSimpleResult      false ;
+    sosa:madeBySensor         erfgoed:sensor .
+
+erfgoed:observation1af
+    a                         sosa:Observation ;
+    sosa:hasFeatureOfInterest erfgoed:alignment1a ;
+    sosa:observedProperty     property:coverage_percentage ;
+    prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000> ;
+    sosa:hasSimpleResult      27.14 ;
+    sosa:madeBySensor         erfgoed:sensor .
 
 
 
+property:coverage_boolean
+    a ssn:Property .
+
+property:coverage_percentage
+    a ssn:Property .
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <http://qudt.org/vocab/unit/PERCENT>
-            a <http://qudt.org/schema/qudt/Unit> ;
-            <http://purl.org/dc/terms/description> "\"Percent\" is a unit for  'Dimensionless Ratio' expressed as \\(\\%\\)."^^<http://qudt.org/schema/qudt/LatexString> ;
-            <http://qudt.org/schema/qudt/dbpediaMatch> "http://dbpedia.org/resource/Percentage"^^xsd:anyURI ;
-            <http://qudt.org/schema/qudt/hasDimensionVector> <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/LengthPercentage> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/PressurePercentage> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/Prevalence> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/RelativeLuminousFlux> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/RelativePartialPressure> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/ResistancePercentage> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/TimePercentage> ;
-            <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/VoltagePercentage> ;
-            <http://qudt.org/schema/qudt/iec61360Code> "0112/2///62720#UAA000" ;
-            <http://qudt.org/schema/qudt/informativeReference> "http://en.wikipedia.org/wiki/Percentage?oldid=495284540"^^xsd:anyURI ;
-            <http://qudt.org/schema/qudt/omUnit> <http://www.ontology-of-units-of-measure.org/resource/om-2/percent> ;
-            <http://qudt.org/schema/qudt/symbol> "%" ;
-            <http://qudt.org/schema/qudt/ucumCode> "%"^^<http://qudt.org/schema/qudt/UCUMcs> ;
-            <http://qudt.org/schema/qudt/udunitsCode> "%" ;
-            <http://qudt.org/schema/qudt/uneceCommonCode> "P1" ;
-            rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
-            rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
-            rdfs:label "Percent"@en ;
-        .
 
 # #################################################################
 # #
@@ -121,83 +159,145 @@ erfgoed:predictie1c a prov:Entity .
 # #
 # #################################################################
 :wktLiteral
-	a rdfs:Datatype ;
-	skos:definition """A Well-known Text serialization of a Geometry object."""@en ;
-	rdfs:seeAlso <https://portal.ogc.org/files/?artifact_id=25355> ; # TODO: replace with one that is guaranteed to be persistent
-	skos:prefLabel "Well-known Text Literal"@en .
+    a               rdfs:Datatype ;
+    skos:definition """A Well-known Text serialization of a Geometry object."""@en ;
+    rdfs:seeAlso
+                    <https://portal.ogc.org/files/?artifact_id=25355> ; # TODO: replace with one that is guaranteed to be persistent
+    skos:prefLabel  "Well-known Text Literal"@en .
 # #################################################################
 # #
 # #    Data properties
 # #
 # #################################################################
 :hasMetricArea
-    a rdf:Property, owl:DatatypeProperty ;
+    a                  rdf:Property, owl:DatatypeProperty ;
     rdfs:subPropertyOf :hasMetricSize ;
-    rdfs:domain :SpatialObject ;
-    rdfs:range xsd:double ;
-    skos:definition """The area of a Spatial Object in square meters."""@en ;
-    skos:prefLabel "has area in square meters"@en .
+    rdfs:domain        :SpatialObject ;
+    rdfs:range         xsd:double ;
+    skos:definition    """The area of a Spatial Object in square meters."""@en ;
+    skos:prefLabel     "has area in square meters"@en .
 
 :asWKT
-	a rdf:Property, owl:DatatypeProperty ;
-	rdfs:subPropertyOf :hasSerialization ;
-	rdfs:domain :Geometry ;
-	rdfs:range :wktLiteral ;
-	skos:definition """The WKT serialization of a Geometry"""@en ;
-	skos:prefLabel "as WKT"@en .
+    a                  rdf:Property, owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasSerialization ;
+    rdfs:domain        :Geometry ;
+    rdfs:range         :wktLiteral ;
+    skos:definition    """The WKT serialization of a Geometry"""@en ;
+    skos:prefLabel     "as WKT"@en .
 
-prov:generatedAtTime  rdfs:comment        "The time at which an entity was completely created and is available for use."@en ;
-                      rdfs:range          xsd:dateTime ;
-                      rdf:type            owl:DatatypeProperty ;
-                      rdfs:label          "generatedAtTime" ;
-                      rdfs:domain         prov:Entity ;
-                      prov:qualifiedForm  prov:Generation .
+prov:generatedAtTime
+    rdfs:comment       "The time at which an entity was completely created and is available for use."@en ;
+    rdfs:range         xsd:dateTime ;
+    rdf:type           owl:DatatypeProperty ;
+    rdfs:label         "generatedAtTime" ;
+    rdfs:domain        prov:Entity ;
+    prov:qualifiedForm prov:Generation .
+
+
+erfgoed:full
+    a          rdf:Property ;
+    qb:concept property:coverage_boolean ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "volledig"@nl .
+
+
+erfgoed:percentage
+    a          rdf:Property ;
+    qb:concept property:coverage_percentage ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "percentage"@nl .
+
+
 # #################################################################
 # #
 # #    Object Properties
 # #
 # #################################################################
-prov:hadMember  rdf:type                   owl:ObjectProperty ;
-                rdfs:range                 prov:Entity ;
-                rdfs:domain                prov:Collection ;
-                rdfs:subPropertyOf         prov:wasInfluencedBy ;
-                rdfs:label                 "hadMember" .
+sosa:madeObservation
+    a                     owl:ObjectProperty ;
+    rdfs:label            "made observation"@en ;
+    skos:definition       "Relation between a Sensor and an Observation made by the Sensor."@en ;
+    rdfs:comment          "Relation between a Sensor and an Observation made by the Sensor."@en ;
+    schema:domainIncludes sosa:Sensor ;
+    schema:rangeIncludes  sosa:Observation ;
+    owl:inverseOf         sosa:madeBySensor ;
+    rdfs:isDefinedBy      sosa: .
 
-prov:used  rdf:type             owl:ObjectProperty ;
-           rdfs:subPropertyOf      prov:wasInfluencedBy ;
-           prov:inverse            "wasUsedBy" ;
-           rdfs:domain             prov:Activity ;
-           prov:qualifiedForm      prov:Usage ;
-           rdfs:label              "used" ;
-           rdfs:comment            "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
-           rdfs:range              prov:Entity ;
-           prov:qualifiedForm      prov:qualifiedUsage .
+sosa:hasFeatureOfInterest
+    a                     owl:ObjectProperty ;
+    rdfs:label            "has feature of interest"@en ;
+    skos:definition
+                          "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+    rdfs:comment
+                          "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+    skos:example
+                          "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en ;
+    schema:domainIncludes sosa:Observation ;
+    schema:domainIncludes sosa:Actuation ;
+    schema:domainIncludes sosa:Sampling ;
+    schema:rangeIncludes  sosa:FeatureOfInterest ;
+    schema:rangeIncludes  sosa:Sample ;
+    owl:inverseOf         sosa:isFeatureOfInterestOf ;
+    rdfs:isDefinedBy      sosa: .
 
-prov:generated  prov:sharesDefinitionWith  prov:Generation ;
-                rdf:type                   owl:ObjectProperty ;
-                prov:editorialNote         "prov:generated is one of few inverse property defined, to allow Activity-oriented assertions in addition to Entity-oriented assertions."@en ;
-                rdfs:domain                prov:Activity ;
-                rdfs:range                 prov:Entity ;
-                owl:inverseOf              prov:wasGeneratedBy ;
-                rdfs:subPropertyOf         prov:influenced ;
-                rdfs:label                 "generated" .
+prov:wasAssociatedWith
+    rdfs:domain        prov:Activity ;
+    rdfs:range         prov:Agent ;
+    prov:qualifiedForm prov:Association ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    prov:qualifiedForm prov:qualifiedAssociation ;
+    rdf:type           owl:ObjectProperty ;
+    prov:inverse       "wasAssociateFor" ;
+    rdfs:comment
+                       "An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity."@en .
 
-prov:wasGeneratedBy  rdfs:subPropertyOf  prov:wasInfluencedBy ;
-                     prov:qualifiedForm      prov:Generation ;
-                     rdfs:label              "wasGeneratedBy" ;
-                     rdfs:range              prov:Activity ;
-                     prov:category           "starting-point" ;
-                     rdf:type                owl:ObjectProperty ;
-                     prov:qualifiedForm      prov:qualifiedGeneration ;
-                     prov:inverse            "generated" ;
-                     rdfs:domain             prov:Entity .
+prov:hadMember
+    rdf:type           owl:ObjectProperty ;
+    rdfs:range         prov:Entity ;
+    rdfs:domain        prov:Collection ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    rdfs:label         "hadMember" .
+
+prov:used
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    prov:inverse       "wasUsedBy" ;
+    rdfs:domain        prov:Activity ;
+    prov:qualifiedForm prov:Usage ;
+    rdfs:label         "used" ;
+    rdfs:comment
+                       "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+    rdfs:range         prov:Entity ;
+    prov:qualifiedForm prov:qualifiedUsage .
+
+prov:generated
+    prov:sharesDefinitionWith prov:Generation ;
+    rdf:type                  owl:ObjectProperty ;
+    prov:editorialNote
+                              "prov:generated is one of few inverse property defined, to allow Activity-oriented assertions in addition to Entity-oriented assertions."@en ;
+    rdfs:domain               prov:Activity ;
+    rdfs:range                prov:Entity ;
+    owl:inverseOf             prov:wasGeneratedBy ;
+    rdfs:subPropertyOf        prov:influenced ;
+    rdfs:label                "generated" .
+
+prov:wasGeneratedBy
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    prov:qualifiedForm prov:Generation ;
+    rdfs:label         "wasGeneratedBy" ;
+    rdfs:range         prov:Activity ;
+    prov:category      "starting-point" ;
+    rdf:type           owl:ObjectProperty ;
+    prov:qualifiedForm prov:qualifiedGeneration ;
+    prov:inverse       "generated" ;
+    rdfs:domain        prov:Entity .
 
 :hasGeometry
-	a rdf:Property, owl:ObjectProperty ;
-	rdfs:domain :Feature ;
-	rdfs:range :Geometry ;
-	skos:definition """A spatial representation for a given Feature."""@en ;
-        skos:prefLabel "has geometry"@en .
+    a               rdf:Property, owl:ObjectProperty ;
+    rdfs:domain     :Feature ;
+    rdfs:range      :Geometry ;
+    skos:definition """A spatial representation for a given Feature."""@en ;
+    skos:prefLabel  "has geometry"@en .
 
 # #################################################################
 # #
@@ -206,41 +306,111 @@ prov:wasGeneratedBy  rdfs:subPropertyOf  prov:wasInfluencedBy ;
 # #################################################################
 
 :Feature
-    a rdfs:Class, owl:Class ;
-    rdfs:subClassOf :SpatialObject ;
+    a                rdfs:Class, owl:Class ;
+    rdfs:subClassOf  :SpatialObject ;
     owl:disjointWith :Geometry ;
-    skos:definition """A discrete spatial phenomenon in a universe of discourse."""@en ;
-    skos:note """A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."""@en ;
-    skos:prefLabel "Feature"@en .
+    skos:definition  """A discrete spatial phenomenon in a universe of discourse."""@en ;
+    skos:note
+                     """A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."""@en ;
+    skos:prefLabel   "Feature"@en .
 
 :Geometry
-    a rdfs:Class, owl:Class ;
+    a               rdfs:Class, owl:Class ;
     rdfs:subClassOf :SpatialObject ;
-    skos:definition """A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."""@en ;
-    skos:note """Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."""@en ;
-    skos:prefLabel "Geometry"@en .
+    skos:definition
+                    """A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."""@en ;
+    skos:note
+                    """Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."""@en ;
+    skos:prefLabel  "Geometry"@en .
 
 :SpatialObject
-    a rdfs:Class, owl:Class ;
+    a               rdfs:Class, owl:Class ;
     skos:definition """Anything spatial (being or having a shape, position or an extent)."""@en ;
-    skos:note """Subclasses of this class are expected to be used for instance data."""@en ;
-    skos:prefLabel "Spatial Object"@en .
+    skos:note       """Subclasses of this class are expected to be used for instance data."""@en ;
+    skos:prefLabel  "Spatial Object"@en .
 
-prov:Entity  rdfs:label        "Entity" ;
-             rdf:type          owl:Class ;
-             prov:definition   "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en ;
-             owl:disjointWith  prov:InstantaneousEvent .
+prov:Entity
+    rdfs:label       "Entity" ;
+    rdf:type         owl:Class ;
+    prov:definition
+                     "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en ;
+    owl:disjointWith prov:InstantaneousEvent .
 
-prov:Collection  prov:definition   "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en ;
-                 rdfs:subClassOf   prov:Entity ;
-                 rdfs:label        "Collection" ;.
+prov:Collection
+    prov:definition
+                    "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label      "Collection" ; .
 
-prov:Agent  owl:disjointWith  prov:InstantaneousEvent ;
-            rdfs:label        "Agent" ;
-            rdf:type          owl:Class .
+prov:Agent
+    owl:disjointWith prov:InstantaneousEvent ;
+    rdfs:label       "Agent" ;
+    rdf:type         owl:Class .
 
-prov:Activity  owl:disjointWith  prov:Entity ;
-               prov:definition   "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities." ;
-               rdfs:label        "Activity" ;
-               rdf:type          owl:Class .
+prov:Activity
+    owl:disjointWith prov:Entity ;
+    prov:definition
+                     "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities." ;
+    rdfs:label       "Activity" ;
+    rdf:type         owl:Class .
 
+prov:SoftwareAgent
+    prov:definition "A software agent is running software."@en ;
+    rdfs:subClassOf prov:Agent ;
+    rdfs:label      "SoftwareAgent" ;
+    rdf:type        owl:Class .
+
+sosa:Observation
+    a                rdfs:Class, owl:Class ;
+    rdfs:label       "Observation"@en ;
+    skos:definition
+                     "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+    rdfs:comment
+                     "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+    skos:example
+                     "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en ;
+    rdfs:isDefinedBy sosa: .
+
+sosa:Sensor
+    a                rdfs:Class, owl:Class ;
+    rdfs:label       "Sensor"@en ;
+    skos:definition
+                     "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+    rdfs:comment
+                     "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+    skos:example
+                     "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en ;
+    rdfs:isDefinedBy sosa: .
+
+
+
+
+<http://qudt.org/vocab/unit/PERCENT>
+    a                                                <http://qudt.org/schema/qudt/Unit> ;
+    <http://purl.org/dc/terms/description>
+                                                     "\"Percent\" is a unit for  'Dimensionless Ratio' expressed as \\(\\%\\)."^^<http://qudt.org/schema/qudt/LatexString> ;
+    <http://qudt.org/schema/qudt/dbpediaMatch>       "http://dbpedia.org/resource/Percentage"^^xsd:anyURI ;
+    <http://qudt.org/schema/qudt/hasDimensionVector> <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/LengthPercentage> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/PressurePercentage> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/Prevalence> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/RelativeLuminousFlux> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/RelativePartialPressure> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/ResistancePercentage> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/TimePercentage> ;
+    <http://qudt.org/schema/qudt/hasQuantityKind>    <http://qudt.org/vocab/quantitykind/VoltagePercentage> ;
+    <http://qudt.org/schema/qudt/iec61360Code>       "0112/2///62720#UAA000" ;
+    <http://qudt.org/schema/qudt/informativeReference>
+                                                     "http://en.wikipedia.org/wiki/Percentage?oldid=495284540"^^xsd:anyURI ;
+    <http://qudt.org/schema/qudt/omUnit>
+                                                     <http://www.ontology-of-units-of-measure.org/resource/om-2/percent> ;
+    <http://qudt.org/schema/qudt/symbol>             "%" ;
+    <http://qudt.org/schema/qudt/ucumCode>           "%"^^<http://qudt.org/schema/qudt/UCUMcs> ;
+    <http://qudt.org/schema/qudt/udunitsCode>        "%" ;
+    <http://qudt.org/schema/qudt/uneceCommonCode>    "P1" ;
+    rdfs:isDefinedBy                                 <http://qudt.org/2.1/vocab/unit> ;
+    rdfs:isDefinedBy                                 <http://qudt.org/vocab/unit> ;
+    rdfs:label                                       "Percent"@en ;
+.
