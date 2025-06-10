@@ -1,0 +1,56 @@
+PREFIX concept: <https://data.omgeving.vlaanderen.be/id/concept/chemische_stof/>
+PREFIX cs:      <https://data.vlaanderen.be/ns/chemische_stof#>
+PREFIX dbo:     <http://dbpedia.org/ontology/>
+PREFIX dbp:     <http://dbpedia.org/property/>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX vlcs:    <https://data.omgeving.vlaanderen.be/id/conceptscheme/>
+
+<http://www.w3.org/ns/prov#Collection>
+        rdf:type  "rdfs:Resource";
+        <http://www.w3.org/ns/prov#hadMember>
+                "rdfs:Resource";
+        <http://www.w3.org/ns/prov#hadMember>
+                <http://www.opengis.net/ont/geosparql#Geometry> .
+
+<http://www.w3.org/ns/prov#Activity>
+        rdf:type  "rdfs:Resource";
+        <http://www.w3.org/ns/prov#generated>
+                <http://www.opengis.net/ont/geosparql#Geometry>;
+        <http://www.w3.org/ns/prov#generatedAtTime>
+                "http://www.w3.org/2001/XMLSchema#dateTime";
+        <http://www.w3.org/ns/prov#used>
+                "rdfs:Resource";
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://www.w3.org/ns/prov#Agent>;
+        <http://www.w3.org/ns/sosa/hasFeatureOfInterest>
+                <http://www.w3.org/ns/prov#Collection>;
+        <http://www.w3.org/ns/sosa/usedProcedure>
+                <http://www.w3.org/ns/sosa/Procedure> .
+
+<http://www.opengis.net/ont/geosparql#Feature>
+        rdf:type  "rdfs:Resource";
+        <http://www.opengis.net/ont/geosparql#hasGeometry>
+                <http://www.opengis.net/ont/geosparql#Geometry> .
+
+<http://www.opengis.net/ont/geosparql#Geometry>
+        rdf:type       "rdfs:Resource";
+        <http://www.opengis.net/ont/geosparql#asWKT>
+                "http://www.opengis.net/ont/geosparql#wktLiteral";
+        <http://www.opengis.net/ont/geosparql#hasMetricArea>
+                "http://www.w3.org/2001/XMLSchema#decimal";
+        skos:notation  "https://data.vlaanderen.be/ns/perceel#capakey";
+        <https://id.erfgoed.net/metadata/version_date>
+                "http://www.w3.org/2001/XMLSchema#date" .
+
+<http://www.w3.org/ns/prov#Agent>
+        rdf:type      "rdfs:Resource";
+        rdfs:comment  "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString";
+        <http://www.w3.org/ns/ssn/implements>
+                <http://www.w3.org/ns/sosa/Procedure> .
+
+<http://www.w3.org/ns/sosa/Procedure>
+        rdf:type      "rdfs:Resource";
+        rdfs:comment  "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .

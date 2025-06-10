@@ -6,9 +6,14 @@ import N3 from 'n3';
 
 import {
     prefixes,
-    frame_actuation,
     frame_observation,
-
+    frame_actuation,
+    frame_association,
+    frame_agent,
+    frame_procedure,
+    frame_list,
+    frame_observableProperty,
+    frame_geometry,
     rdf_to_jsonld,
     sortLines
 } from './utils/variables.js';
@@ -26,8 +31,9 @@ ttl_files.forEach(file => {
 })
 let nt = await reasoner.get_abox_dump()
 //console.log(reasoner.get_abox_dump())
-fs.writeFileSync('examples/brdr-actuation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
-fs.writeFileSync('examples/brdr-observation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observation), null, 4));
+fs.writeFileSync('examples/jsonld/brdr-actuation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
+fs.writeFileSync('examples/jsonld/brdr-observation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observation), null, 4));
+fs.writeFileSync('examples/jsonld/brdr-geometry-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_geometry), null, 4));
 
 
 //

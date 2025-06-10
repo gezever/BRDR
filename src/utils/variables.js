@@ -63,6 +63,10 @@ const frame_observation = {
         "@embed": "@never",
         "@omitDefault": true
     },
+    "usedProcedure": {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
 
 }
 const frame_association = {
@@ -186,50 +190,15 @@ async function rdf_to_jsonld(nt, frame) {
 }
 
 const prefixes = {
-    "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
     "adms": "http://www.w3.org/ns/adms#",
-    "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
-    "ass": "https://data.bodemenondergrond.vlaanderen.be/id/association/",
-    "bemprocedure": "https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/",
-    "boe": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#",
-    "bl": "https://data.bodemenondergrond.vlaanderen.be/id/bijlage/",
-    "boorgat": "https://data.bodemenondergrond.vlaanderen.be/id/boorgat/",
-    "boor": "https://data.bodemenondergrond.vlaanderen.be/id/boor/",
-    "boormethodeinterval": "https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/",
-    "boring": "https://data.bodemenondergrond.vlaanderen.be/id/boring/",
-    "cl-bpt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/",
-    "cl-brm": "https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/",
-    "cl-dlb": "https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/",
-    "cl-got": "https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/",
-    "cl-idt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/",
     "dcterms": "http://purl.org/dc/terms/",
-    "geometrie": "https://data.bodemenondergrond.vlaanderen.be/id/geometrie/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
-    "gmldov": "https://data.bodemenondergrond.vlaanderen.be/id/gml/",
     "gml": "http://www.opengis.net/ont/gml#",
-    "grondboringbeno": "https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#",
-    "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
-    "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
-    "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
-    "id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
-    "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
-    "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
-    "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
-    "obs": "https://data.bodemenondergrond.vlaanderen.be/id/observation/",
-    "obs_prop": "https://data.bodemenondergrond.vlaanderen.be/id/property/",
-    "opdracht": "https://data.bodemenondergrond.vlaanderen.be/id/opdracht/",
-    "opm": "https://data.bodemenondergrond.vlaanderen.be/id/opmerking/",
-    "prop": "https://data.bodemenondergrond.vlaanderen.be/id/concept/property/",
     "prov": "http://www.w3.org/ns/prov#",
     "qudt-schema": "https://qudt.org/schema/qudt/",
     "qudt-unit": "https://qudt.org/vocab/unit/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "result": "https://data.bodemenondergrond.vlaanderen.be/id/result/",
-    "richting": "https://data.bodemenondergrond.vlaanderen.be/id/richting/",
-    "rol": "https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/",
-    "sam": "https://data.bodemenondergrond.vlaanderen.be/id/sampling/",
-    "schema": "https://schema.org/",
     "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
     "seb": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -237,7 +206,6 @@ const prefixes = {
     "sosa-om": "http://www.w3.org/ns/sosa/om#",
     "ssn": "http://www.w3.org/ns/ssn/",
     "time": "http://www.w3.org/2006/time#",
-    "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
 }
 

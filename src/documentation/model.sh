@@ -1,0 +1,14 @@
+#!/bin/bash  
+
+#declare -a files=("alignment.ttl" "evaluatie.ttl" "features-geometries.ttl" "selectie.ttl")
+declare -a files=("alignment.ttl" "evaluatie.ttl" "selectie.ttl")
+
+
+for file in "${files[@]}";
+do
+echo $file
+riot ../examples/$file ../examples/features-geometries.ttl > /tmp/test.nt
+  sparql --results=TTL --data=/tmp/test.nt  --query model.rq  > model.ttl
+  rdf2dot  model.ttl | dot -Tpng > ${file/ttl/png}
+  #rdf2dot  model.ttl  > model.dot
+done

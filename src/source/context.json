@@ -227,6 +227,10 @@
     "@id": "prov:generated",
     "@type": "@id"
   },
+  "capakey": {
+    "@type": "https://data.vlaanderen.be/ns/perceel#capakey",
+    "@id": "skos:notation"
+  },
   "subject": {
     "@id": "dcterms:subject",
     "@type": "@id"
