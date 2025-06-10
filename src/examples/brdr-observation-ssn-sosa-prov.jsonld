@@ -216,6 +216,14 @@
             "@id": "sosa:observedProperty",
             "@type": "@id"
         },
+        "wasAssociatedWith": {
+            "@id": "prov:wasAssociatedWith",
+            "@type": "@id"
+        },
+        "generated": {
+            "@id": "prov:generated",
+            "@type": "@id"
+        },
         "subject": {
             "@id": "dcterms:subject",
             "@type": "@id"

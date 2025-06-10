@@ -94,53 +94,38 @@ const frame_agent = {
 const frame_actuation = {
     "@context": context,
     "@type": ["sosa:Actuation"],
-    "hasFeatureOfInterest": {
-        "@embed": "@never",
+    "generated": {
+        "@embed": "@always",
         "@omitDefault": true,
-        "hasProperty": {
-            "@embed": "@always",
-            "@omitDefault": true,
-            "isActedOnBy": {
-                "@embed": "@never",
-                "@omitDefault": true
-            }
-        },
-        "hasSample": {
+        "hadMember": {
             "@embed": "@never",
             "@omitDefault": true
         },
-    },
-    "actsOnProperty": {
-        "@embed": "@never",
-        "@omitDefault": true,
-        "isActedOnBy": {
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-        "isPropertyOf": {
-            "@embed": "@never",
-            "@omitDefault": true,
-            "hasSample": {
-                "@embed": "@never",
-                "@omitDefault": true
-            }
-        }
     },
     "hasResult": {
         "@embed": "@always",
         "@omitDefault": true,
-        "about": {
+        "hadMember": {
             "@embed": "@never",
-            "@omitDefault": true,
+            "@omitDefault": true
         },
     },
-    "madeByActuator": {
-        "@embed": "@always",
+    "used":  {
+        "@embed": "@never",
         "@omitDefault": true,
-        "implements": {
-            "@embed": "@never",
-            "@omitDefault": true,
-        },
+    },
+    "hasFeatureOfInterest": {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
+    "actsOnProperty": {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
+
+    "madeByActuator": {
+        "@embed": "@never",
+        "@omitDefault": true
     },
     "usedProcedure": {
         "@embed": "@never",
@@ -148,27 +133,6 @@ const frame_actuation = {
     },
 }
 
-const frame_boorgat = {
-    "@context": context,
-    "@type": ["grondboringbeno:Boorgat"],
-    "hasProperty": {
-        "@embed": "@never",
-        "@omitDefault": true,
-        "isActedOnBy": {
-            "@embed": "@always",
-            "@omitDefault": true,
-        },
-
-    },
-    "hasSample": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "hasGeometry": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-}
 
 const frame_geometry = {
     "@context": context,
@@ -189,76 +153,7 @@ const frame_observableProperty = {
 
 }
 
-const frame_bijlage = {
-    "@context": context,
-    "@type": ["grondboringbeno:Bijlage"],
 
-    "about": {
-        "@embed": "@always",
-        "@omitDefault": true,
-        "actuations": {
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-        "samplings": {
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-        "qualifiedAssociation": {
-            "@embed": "@never",
-            "@omitDefault": true
-        }
-
-    }
-}
-
-const frame_sampling = {
-    "@context": context,
-    "@type": ["sosa:Sampling"],
-    "hasFeatureOfInterest": {
-        "@embed": "@never",
-        "@omitDefault": true,
-        "hasProperty": {
-            "@embed": "@always",
-            "@omitDefault": true,
-            "isActedOnBy": {
-                "@embed": "@never",
-                "@omitDefault": true
-            }
-        },
-        "hasSample": {
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-    },
-    "hasResult": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "madeBySampler":{
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "usedProcedure":
-        {
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-
-}
-
-const frame_sample = {
-    "@context": context,
-    "@type": ["sosa:Sample"],
-    "sosa:isResultOf":{
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "isSampleOf":{
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-}
 
 const frame_procedure = {
     "@context": context,
@@ -278,18 +173,7 @@ const frame_list = {
     },
 }
 
-const frame_opmerking = {
-    "@context": context,
-    "@type": ["grondboringbeno:Opmerking"],
-    "dcterms:creator":{
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "about":{
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-}
+
 
 const sortLines = str => Array.from(new Set(str.split(/\r?\n/))).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
@@ -361,17 +245,12 @@ export {
     prefixes,
     frame_observation,
     frame_actuation,
-    frame_sampling,
-    frame_bijlage,
-    frame_boorgat,
     frame_association,
     frame_agent,
-    frame_sample,
     frame_procedure,
     frame_list,
     frame_observableProperty,
     frame_geometry,
-    frame_opmerking,
     rdf_to_jsonld,
     sortLines
 };

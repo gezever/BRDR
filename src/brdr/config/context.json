@@ -1,0 +1,126 @@
+{
+  "vlaanderen.identifier": "@id",
+  "dc.date.available":{
+    "@id" : "http://purl.org/dc/terms/available",
+    "@type": "xs:dateTime"
+  },
+  "dc.date.created":{
+    "@id" : "http://purl.org/dc/terms/created",
+    "@type": "xs:dateTime"
+  },
+
+  "dc.date.issued":{
+    "@id" : "http://purl.org/dc/terms/issued",
+    "@type": "xs:dateTime"
+  },
+  "bitstream":{
+    "@id" : "https://data.vlaanderen.be/ns/dossier#isVoorgesteldDoor",
+    "@type": "@id"
+  },
+
+  "dc.description":{
+    "@id" : "http://purl.org/dc/elements/1.1/description",
+    "@language" : "nl"
+  },
+  "dc.identifier":{
+    "@id" : "http://purl.org/dc/elements/1.1/identifier"
+  },
+  "dossier.stuk.type":{
+    "@id" : "http://purl.org/dc/elements/1.1/type"
+  },
+  "zendantennes.document.type":{
+    "@id" : "http://purl.org/dc/elements/1.1/type"
+  },
+  "dc.language.iso":{
+    "@id" : "http://purl.org/dc/elements/1.1/language"
+  },
+  "dc.publisher":{
+    "@id" : "http://purl.org/dc/elements/1.1/publisher"
+  },
+  "dc.relation.haspart":{
+    "@id": "http://www.w3.org/ns/prov#hadMember",
+    "@type": "@id"
+  },
+  "dc.relation.ispartof":{
+    "@type": "@id",
+    "@reverse":  "http://www.w3.org/ns/prov#hadMember"
+  },
+  "dc.subject":{
+    "@id" : "http://purl.org/dc/elements/1.1/subject",
+    "@language" : "nl"
+  },
+  "dcterms.creator":{
+    "@id" : "http://purl.org/dc/elements/1.1/creator"
+  },
+  "dc.title":{
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "@language" : "nl"
+  },
+  "dc.type":{
+    "@id": "@type",
+    "@type": "@id"
+  },
+  "id": "@id",
+  "name": {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "@language" : "nl"
+  },
+  "format": {
+    "@id" : "http://purl.org/dc/elements/1.1/format"
+  },
+  "dc.source": {
+    "@id" : "http://purl.org/dc/elements/1.1/source"
+  },
+
+  "zendantennes.dossier.procedure": {
+    "@id": "https://data.omgeving.vlaanderen.be/ns/dossier#procedure",
+    "@language" : "nl"
+  },
+  "dossier.zaak.procedure": {
+    "@id": "https://data.omgeving.vlaanderen.be/ns/dossier#procedure",
+    "@language" : "nl"
+  },
+  "dossier.procedurestap.type": {
+    "@id": "https://data.omgeving.vlaanderen.be/ns/dossier#procedurestap",
+    "@language" : "nl"
+  },
+  "zendantennes.dossier.procedurestap": {
+    "@id": "https://data.omgeving.vlaanderen.be/ns/dossier#procedurestap",
+    "@language" : "nl"
+  },
+  "mimeType": {
+    "@id" : "http://purl.org/dc/elements/1.1/format"
+  },
+  "sizeBytes": {
+    "@id": "dcat:byteSize",
+    "@type": "xs:int"
+  },
+  "collection": {
+    "@id": "http://purl.org/dc/terms/source",
+    "@type": "@id"
+  },
+  "checkSum": {
+    "@id": "http://spdx.org/rdf/terms#checksum",
+    "@type": "@id"
+  },
+  "value": {
+    "@id": "http://spdx.org/rdf/terms#checksumValue"
+  },
+  "checkSumAlgorith": {
+    "@id": "http://spdx.org/rdf/terms#algorithm"
+  },
+  "dcat":	"http://www.w3.org/ns/dcat#",
+  "omv_dossier": "https://data.omgeving.vlaanderen.be/ns/dossier#",
+  "dossier": "https://data.vlaanderen.be/ns/dossier#",
+  "col": "https://data.omgeving.vlaanderen.be/id/collection/",
+  "dct": "http://purl.org/dc/terms/",
+  "dc": "http://purl.org/dc/elements/1.1/",
+  "prov": "http://www.w3.org/ns/prov#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "xs": "http://www.w3.org/2001/XMLSchema#",
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "spdx": "http://spdx.org/rdf/terms#",
+  "@base": "https://data.omgeving.vlaanderen.be/id/entity/"
+}
+

@@ -62,10 +62,12 @@ erfgoed:aligning1
     prov:used                 <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0692/00B000>,
                               <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0693/00B000>,
                               <https://geo.api.vlaanderen.be/capakey/v2/parcel/24504D0734/00M000> ;
-    prov:generated            erfgoed:alignment1 ;
     sosa:hasResult            erfgoed:alignment1 ;
-    prov:wasAssociatedWith    erfgoed:aligner1 ;
+    sosa:madeByActuator       erfgoed:aligner1 ;
 .
+
+erfgoed:aligner1
+    a              sosa:Actuator .
 
 erfgoed:alignment1
     a              prov:Collection ;
@@ -169,6 +171,17 @@ property:coverage_percentage
 # #    Data properties
 # #
 # #################################################################
+
+sosa:hasSimpleResult a owl:DatatypeProperty ;
+                     rdfs:label "has simple result"@en ;
+                     skos:definition "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                     rdfs:comment "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                     skos:example "For instance, the values 23 or true."@en ;
+                     schema:domainIncludes sosa:Actuation ;
+                     schema:domainIncludes sosa:Observation ;
+                     schema:domainIncludes sosa:Sampling ;
+                     rdfs:isDefinedBy sosa: .
+
 :hasMetricArea
     a                  rdf:Property, owl:DatatypeProperty ;
     rdfs:subPropertyOf :hasMetricSize ;
@@ -213,6 +226,53 @@ erfgoed:percentage
 # #    Object Properties
 # #
 # #################################################################
+
+sosa:madeByActuator a owl:ObjectProperty ;
+                    rdfs:label "made by actuator"@en ;
+                    skos:definition "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
+                    rdfs:comment "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
+                    schema:domainIncludes sosa:Actuation ;
+                    schema:rangeIncludes sosa:Actuator ;
+                    owl:inverseOf sosa:madeActuation ;
+                    rdfs:isDefinedBy sosa: .
+
+sosa:observedProperty a owl:ObjectProperty ;
+                      rdfs:label "observed property"@en ;
+                      skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                      rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                      schema:domainIncludes sosa:Observation ;
+                      schema:rangeIncludes sosa:ObservableProperty ;
+                      rdfs:isDefinedBy sosa: .
+
+sosa:hasResult a owl:ObjectProperty ;
+               rdfs:label "has result"@en ;
+               skos:definition "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en ;
+               rdfs:comment "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en ;
+               schema:domainIncludes sosa:Actuation ;
+               schema:domainIncludes sosa:Observation ;
+               schema:domainIncludes sosa:Sampling ;
+               schema:rangeIncludes sosa:Result ;
+               schema:rangeIncludes sosa:Sample ;
+               owl:inverseOf sosa:isResultOf ;
+               rdfs:isDefinedBy sosa: .
+
+sosa:madeBySensor rdf:type owl:ObjectProperty ;
+                  rdfs:label "made by sensor"@en ;
+                  skos:definition "Relation between an Observation and the Sensor which made the Observation."@en ;
+                  rdfs:comment "Relation between an Observation and the Sensor which made the Observation."@en ;
+                  schema:domainIncludes sosa:Observation ;
+                  schema:rangeIncludes sosa:Sensor ;
+                  owl:inverseOf sosa:madeObservation ;
+                  rdfs:isDefinedBy sosa: .
+
+qb:concept a rdf:Property, owl:ObjectProperty;
+           rdfs:label "concept"@en;
+           rdfs:comment "gives the concept which is being measured or indicated by a ComponentProperty"@en;
+           rdfs:domain qb:ComponentProperty;
+           rdfs:range skos:Concept;
+           rdfs:isDefinedBy <http://purl.org/linked-data/cube>;
+.
+
 sosa:madeObservation
     a                     owl:ObjectProperty ;
     rdfs:label            "made observation"@en ;
@@ -360,6 +420,13 @@ prov:SoftwareAgent
     rdfs:label      "SoftwareAgent" ;
     rdf:type        owl:Class .
 
+sosa:Actuation a rdfs:Class , owl:Class ;
+               rdfs:label "Actuation"@en ;
+               skos:definition "An Actuation carries out an (Actuation) Procedure to change the state of the world using an Actuator."@en ;
+               rdfs:comment "An Actuation carries out an (Actuation) Procedure to change the state of the world using an Actuator."@en ;
+               skos:example "The activity of automatically closing a window if the temperature in a room drops below 20 degree Celsius. The activity is the Actuation and the device that closes the window is the Actuator. The Procedure is the rule, plan, or specification that defines the conditions that triggers the Actuation, here a drop in temperature. "@en ;
+               rdfs:isDefinedBy sosa: .
+
 sosa:Observation
     a                rdfs:Class, owl:Class ;
     rdfs:label       "Observation"@en ;
@@ -382,8 +449,19 @@ sosa:Sensor
                      "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en ;
     rdfs:isDefinedBy sosa: .
 
+ssn:Property a owl:Class ;
+             rdfs:label "Property"@en ;
+             skos:definition "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en ;
+             rdfs:comment "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en ;
+             rdfs:subClassOf [ a owl:Restriction ; owl:onProperty ssn:isPropertyOf ; owl:allValuesFrom sosa:FeatureOfInterest ]  ;
+             rdfs:isDefinedBy ssn: .
 
-
+sosa:Actuator a rdfs:Class , owl:Class ;
+              rdfs:label "Actuator"@en ;
+              skos:definition "A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world."@en ;
+              rdfs:comment "A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world."@en ;
+              skos:example "A window actuator for automatic window control, i.e., opening or closing the window."@en ;
+              rdfs:isDefinedBy sosa: .
 
 <http://qudt.org/vocab/unit/PERCENT>
     a                                                <http://qudt.org/schema/qudt/Unit> ;

@@ -10,8 +10,7 @@ import {
     frame_observation,
 
     rdf_to_jsonld,
-    sortLines,
-    frame_opmerking
+    sortLines
 } from './utils/variables.js';
 
 
@@ -27,7 +26,7 @@ ttl_files.forEach(file => {
 })
 let nt = await reasoner.get_abox_dump()
 //console.log(reasoner.get_abox_dump())
-fs.writeFileSync('examples/brdr-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
+fs.writeFileSync('examples/brdr-actuation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
 fs.writeFileSync('examples/brdr-observation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observation), null, 4));
 
 
