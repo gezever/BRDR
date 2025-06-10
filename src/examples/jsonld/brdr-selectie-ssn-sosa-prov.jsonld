@@ -240,6 +240,10 @@
             "@id": "ssn:wasOriginatedBy",
             "@type": "@id"
         },
+        "generatedAtTime": {
+            "@id": "prov:generatedAtTime",
+            "@type": "xsd:dateTime"
+        },
         "date": {
             "@id": "dcterms:date",
             "@type": "xsd:date"
@@ -247,6 +251,10 @@
         "version_date": {
             "@type": "xsd:date",
             "@id": "metadata:version_date"
+        },
+        "comment": {
+            "@language": "nl",
+            "@id": "rdfs:comment"
         },
         "gekoppelde_eigenschap": {
             "@id": "property:gekoppelde_eigenschap",
@@ -281,24 +289,45 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "metadata": "https://id.erfgoed.net/metadata/"
     },
-    "id": "metadata:aligning1",
-    "type": "sosa:Actuation",
-    "used": [
-        "https://data.vlaanderen.be/id/geometry/capakey/24504D0692/00B000",
-        "https://data.vlaanderen.be/id/geometry/capakey/24504D0693/00B000",
-        "https://data.vlaanderen.be/id/geometry/capakey/24504D0734/00M000"
-    ],
-    "hasFeatureOfInterest": "metadata:geometry1",
-    "hasResult": {
-        "id": "metadata:alignment1",
-        "type": "prov:Collection",
-        "hadMember": [
-            "metadata:alignment1a",
-            "metadata:alignment1b",
-            "metadata:alignment1c"
-        ]
-    },
-    "madeByActuator": "metadata:aligner1",
-    "resultTime": "2024-04-16T00:00:12+00:00",
-    "usedProcedure": "metadata:alignment_procedure"
+    "@graph": [
+        {
+            "id": "https://id.erfgoed.net/gebied/feature1",
+            "type": "geosparql:Feature",
+            "hasGeometry": "metadata:geometry1"
+        },
+        {
+            "id": "metadata:selectie",
+            "type": "prov:Activity",
+            "generated": "metadata:alignment1b",
+            "generatedAtTime": "2024-04-16T00:00:12+00:00",
+            "used": [
+                "metadata:alignment_evaluatie1aa",
+                "metadata:alignment_evaluatie1ab",
+                "metadata:alignment_evaluatie1ac",
+                "metadata:alignment_evaluatie1ad",
+                "metadata:alignment_evaluatie1ae",
+                "metadata:alignment_evaluatie1af"
+            ],
+            "wasAssociatedWith": {
+                "id": "metadata:agent1",
+                "type": "prov:Agent",
+                "comment": "implementeert het algoritme",
+                "implements": {
+                    "id": "metadata:selectie_procedure",
+                    "type": "sosa:Procedure",
+                    "comment": "het algoritme"
+                }
+            },
+            "hasFeatureOfInterest": {
+                "id": "metadata:alignment1",
+                "type": "prov:Collection",
+                "hadMember": [
+                    "metadata:alignment1a",
+                    "metadata:alignment1b",
+                    "metadata:alignment1c"
+                ]
+            },
+            "usedProcedure": "metadata:selectie_procedure"
+        }
+    ]
 }

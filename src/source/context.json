@@ -243,6 +243,11 @@
     "@id": "ssn:wasOriginatedBy",
     "@type": "@id"
   },
+
+  "generatedAtTime": {
+    "@id": "prov:generatedAtTime",
+    "@type": "xsd:dateTime"
+  },
   "date": {
     "@id": "dcterms:date",
     "@type": "xsd:date"
@@ -250,6 +255,10 @@
   "version_date": {
     "@type": "xsd:date",
     "@id": "metadata:version_date"
+  },
+  "comment": {
+    "@language": "nl",
+    "@id": "rdfs:comment"
   },
   "gekoppelde_eigenschap": {
     "@id": "property:gekoppelde_eigenschap",

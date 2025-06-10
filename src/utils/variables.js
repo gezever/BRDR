@@ -5,50 +5,20 @@ import jsonld from "jsonld";
 
 
 const context = JSON.parse(fs.readFileSync('source/context.json', 'utf8'));
-const frame_grondboring2 = {
-    "@context": context,
-    "@type": ["grondboringen:Grondboring"],
-    "qualifiedAssociation": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "wasStartedBy": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "boorder": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "boormeester": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "actuations": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "opdrachtgever": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
-    "samplings": {
-        "@embed": "@never",
-        "@omitDefault": true
-    },
 
-
-}
 
 const frame_observation = {
     "@context": context,
-    "@type": ["sosa:Observation"],
+    "@type": ["sosa:Observation", "geosparql:Feature"],
+    "hasGeometry": {"@embed": "@never",
+        "@omitDefault": true,
+    },
     "used": {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true
     },
     "observedProperty": {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true
     },
     "hasResult": {
@@ -60,13 +30,15 @@ const frame_observation = {
         "@omitDefault": true
     },
     "madeBySensor": {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true
     },
     "usedProcedure": {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true,
     },
+
+
 
 }
 const frame_association = {
@@ -97,7 +69,10 @@ const frame_agent = {
 
 const frame_actuation = {
     "@context": context,
-    "@type": ["sosa:Actuation"],
+    "@type": ["sosa:Actuation", "geosparql:Feature"],
+    "hasGeometry": {"@embed": "@never",
+        "@omitDefault": true,
+    },
     "generated": {
         "@embed": "@always",
         "@omitDefault": true,
@@ -110,16 +85,16 @@ const frame_actuation = {
         "@embed": "@always",
         "@omitDefault": true,
         "hadMember": {
-            "@embed": "@never",
+            "@embed": "@always",
             "@omitDefault": true
         },
     },
     "used":  {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true,
     },
     "hasFeatureOfInterest": {
-        "@embed": "@never",
+        "@embed": "@always",
         "@omitDefault": true,
     },
     "actsOnProperty": {
@@ -128,7 +103,55 @@ const frame_actuation = {
     },
 
     "madeByActuator": {
+        "@embed": "@always",
+        "@omitDefault": true
+    },
+    "usedProcedure": {
         "@embed": "@never",
+        "@omitDefault": true,
+    },
+}
+
+
+
+const frame_activity = {
+    "@context": context,
+    "@type": ["prov:Activity", "geosparql:Feature"],
+    "hasGeometry": {"@embed": "@never",
+        "@omitDefault": true,
+    },
+    "generated": {
+        "@embed": "@never",
+        "@omitDefault": true,
+
+    },
+    "hasResult": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "hadMember": {
+            "@embed": "@always",
+            "@omitDefault": true
+        },
+    },
+    "used":  {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
+    "hasFeatureOfInterest": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "hadMember":{
+            "@embed": "@never",
+            "@omitDefault": true,
+        },
+    },
+    "actsOnProperty": {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
+
+    "madeByActuator": {
+        "@embed": "@always",
         "@omitDefault": true
     },
     "usedProcedure": {
@@ -213,6 +236,7 @@ export {
     prefixes,
     frame_observation,
     frame_actuation,
+    frame_activity,
     frame_association,
     frame_agent,
     frame_procedure,

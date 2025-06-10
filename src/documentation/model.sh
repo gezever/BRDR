@@ -12,3 +12,12 @@ riot ../examples/$file ../examples/features-geometries.ttl > /tmp/test.nt
   rdf2dot  model.ttl | dot -Tpng > ${file/ttl/png}
   #rdf2dot  model.ttl  > model.dot
 done
+
+declare -a files=("brdr-alignment-ssn-sosa-prov.jsonld" "brdr-evaluatie-ssn-sosa-prov.jsonld" "brdr-selectie-ssn-sosa-prov.jsonld")
+
+for file in "${files[@]}";
+do
+echo $file
+  sparql --results=TTL --data=../examples/jsonld/$file --query model.rq  > model.ttl
+  rdf2dot  model.ttl | dot -Tpng > ${file/jsonld/png}
+done
