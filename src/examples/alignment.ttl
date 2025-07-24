@@ -38,8 +38,11 @@ erfgoed:aligning1
     sosa:resultTime  "2024-04-16T00:00:12+00:00"^^xsd:dateTime ;
     sosa:madeByActuator       erfgoed:aligner1 ;
 .
+erfgoed:parameters_xyz a ssn:Input ;
+    rdfs:comment "variabelen gebruikt voor het instantieren van het algoritme"@nl;.
 
 erfgoed:alignment_procedure a sosa:Procedure ;
+    ssn:hasInput erfgoed:parameters_xyz ;
                             rdfs:comment "het algoritme"@nl;.
 
 erfgoed:aligner1 a sosa:Actuator; # , prov:SoftwareAgent ;

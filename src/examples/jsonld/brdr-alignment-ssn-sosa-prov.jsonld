@@ -354,7 +354,12 @@
                 "implements": {
                     "id": "metadata:alignment_procedure",
                     "type": "sosa:Procedure",
-                    "comment": "het algoritme"
+                    "comment": "het algoritme",
+                    "ssn:hasInput": {
+                        "id": "metadata:parameters_xyz",
+                        "type": "ssn:Input",
+                        "comment": "variabelen gebruikt voor het instantieren van het algoritme"
+                    }
                 }
             },
             "resultTime": "2024-04-16T00:00:12+00:00",
