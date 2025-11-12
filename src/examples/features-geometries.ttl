@@ -40,7 +40,7 @@ erfgoed:geometry1
 
 <https://data.vlaanderen.be/id/identifier/c85b8c36-bfcb-11f0-8140-2f3031ee0171>
     a                    adms:Identifier ;
-    skos:notation        "myuniqueidentifier"^^<https:example.com/my_own_classification_system>;
+    skos:notation        "myuniqueidentifier"^^<https://example.com/my_own_classification_system>;
 .
 
 <https://data.vlaanderen.be/id/geometry/capakey/24504D0692/00B000>

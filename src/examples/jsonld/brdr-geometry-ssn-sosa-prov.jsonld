@@ -299,7 +299,7 @@
                 "id": "https://data.vlaanderen.be/id/identifier/c85b8c36-bfcb-11f0-8140-2f3031ee0171",
                 "type": "adms:Identifier",
                 "skos:notation": {
-                    "type": "https:example.com/my_own_classification_system",
+                    "type": "https://example.com/my_own_classification_system",
                     "@value": "myuniqueidentifier"
                 }
             },
