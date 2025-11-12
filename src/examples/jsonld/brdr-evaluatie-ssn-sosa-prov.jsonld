@@ -303,6 +303,14 @@
                 "type": "geosparql:Geometry",
                 "area": "130.44",
                 "capakey": "24504D0692/00B000",
+                "identifier": {
+                    "id": "https://data.vlaanderen.be/id/identifier/c85b8c36-bfcb-11f0-8140-2f3031ee0171",
+                    "type": "adms:Identifier",
+                    "skos:notation": {
+                        "type": "https:example.com/my_own_classification_system",
+                        "@value": "myuniqueidentifier"
+                    }
+                },
                 "version_date": "2024-04-15"
             },
             "hasFeatureOfInterest": "metadata:alignment1a",
@@ -336,6 +344,14 @@
                 "type": "geosparql:Geometry",
                 "area": "130.44",
                 "capakey": "24504D0692/00B000",
+                "identifier": {
+                    "id": "https://data.vlaanderen.be/id/identifier/c85b8c36-bfcb-11f0-8140-2f3031ee0171",
+                    "type": "adms:Identifier",
+                    "skos:notation": {
+                        "type": "https:example.com/my_own_classification_system",
+                        "@value": "myuniqueidentifier"
+                    }
+                },
                 "version_date": "2024-04-15"
             },
             "hasFeatureOfInterest": "metadata:alignment1a",

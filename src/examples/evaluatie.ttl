@@ -41,7 +41,7 @@ erfgoed:alignment_evaluatie1aa
     sosa:observedProperty     property:coverage_boolean ;
     prov:used                 <https://data.vlaanderen.be/id/geometry/capakey/24504D0692/00B000> ;
     sosa:hasSimpleResult      true ;
-    sosa:resultTime  "2024-04-16T00:00:12+00:00"^^xsd:dateTime ;
+    sosa:resultTime           "2024-04-16T00:00:12+00:00"^^xsd:dateTime ;
     sosa:usedProcedure        erfgoed:alignment_evaluatie_procedure ;
     sosa:madeBySensor         erfgoed:alignment_evaluator .
 

@@ -49,9 +49,9 @@ erfgoed:selectie
                               erfgoed:alignment_evaluatie1ae,
                               erfgoed:alignment_evaluatie1af ;
     sosa:usedProcedure        erfgoed:selectie_procedure ;
-    prov:generated             erfgoed:alignment1b ;
-    prov:generatedAtTime            "2024-04-16T00:00:12+00:00"^^xsd:dateTime ;
-        prov:wasAssociatedWith        erfgoed:agent1 .
+    prov:generated            erfgoed:alignment1b ;
+    prov:generatedAtTime      "2024-04-16T00:00:12+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith    erfgoed:agent1 .
 
 erfgoed:selectie_procedure a sosa:Procedure ;
                                       rdfs:comment "het algoritme"@nl .
